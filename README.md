@@ -103,3 +103,21 @@ Why this plan:
 - 'Morning walk' was included because it's high priority and takes 20 min.
 - 'Breakfast' was included because it's high priority and takes 10 min.
 - 'Playtime' was included because it's low priority and takes 30 min.```
+```## Testing PawPal+
+
+Run the test suite with:
+
+​```
+python -m pytest -v
+​```
+
+​```
+tests/test_pawpal.py::test_task_completion_changes_status PASSED [20%]
+tests/test_pawpal.py::test_adding_task_increases_pet_task_count PASSED [40%]
+tests/test_pawpal.py::test_plan_prioritizes_high_priority_tasks_first PASSED [60%]
+tests/test_pawpal.py::test_plan_skips_tasks_that_dont_fit_in_time PASSED [80%]
+tests/test_pawpal.py::test_explain_plan_returns_message_for_empty_plan PASSED [100%]
+5 passed in 0.04s
+​```
+
+**Confidence Level:** 4/5 stars — core scheduling, prioritization, and edge cases are covered.```

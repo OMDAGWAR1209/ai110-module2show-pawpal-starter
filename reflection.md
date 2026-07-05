@@ -54,7 +54,12 @@ I tested that tasks sort correctly by time, that marking a recurring task comple
 I'm fairly confident (4/5) the scheduler works correctly for the core cases. If I had more time I'd test edge cases like a pet with zero tasks, and tasks that span midnight.
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
-
+- Task completion status changes correctly.
+- Adding a task increases the pet's task count.
+- The planner prioritizes high-priority tasks first.
+- The planner skips tasks that don't fit in the available time.
+- The planner returns a clear message when no tasks fit.
+These were important because they're the core "smart" behaviors of the scheduler.
 ---
 
 ## 5. Reflection
