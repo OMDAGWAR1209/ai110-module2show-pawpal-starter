@@ -1,4 +1,5 @@
 import streamlit as st
+from pawpal_system import Owner, Pet, Task, Priority, Planner
 
 st.set_page_config(page_title="PawPal+", page_icon="🐾", layout="centered")
 
@@ -74,15 +75,29 @@ st.subheader("Build Schedule")
 st.caption("This button should call your scheduling logic once you implement it.")
 
 if st.button("Generate schedule"):
-    st.warning(
-        "Not implemented yet. Next step: create your scheduling logic (classes/functions) and call it here."
-    )
-    st.markdown(
-        """
-Suggested approach:
-1. Design your UML (draft).
-2. Create class stubs (no logic).
-3. Implement scheduling behavior.
-4. Connect your scheduler here and display results.
-"""
-    )
+    if not st.session_state.tasks:
+        st.warning("Add at least one task first.")
+    else:
+        priority_map = {"low": Priority.LOW, "medium": Priority.NORMAL, "high": Priority.HIGH}
+
+        owner = Owner(name=owner_name)
+        pet = Pet(name=pet_name, species=species)
+        owner.add_pet(pet)
+
+        for t in st.session_state.tasks:
+            pet.add_task(Task(
+                description=t["title"],
+                duration_minutes=t["duration_minutes"],
+                priority=priority_map[t["priority"]],
+            ))
+
+        planner = Planner(owner)
+        time_available = st.number_input("Time available today (minutes)", min_value=10, max_value=600, value=120)
+        plan = planner.build_plan(time_available_minutes=time_available)
+
+        st.success("Here's today's plan:")
+        for task in plan:
+            st.write(f"- {task.description} ({task.duration_minutes} min, {task.priority.value})")
+
+        st.markdown("**Why this plan:**")
+        st.text(planner.explain_plan(plan))
