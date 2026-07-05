@@ -42,7 +42,14 @@ pip install -r requirements.txt
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
 
-## 🖥️ Sample Output
+## Features
+
+- **Task representation**: each task has a description, duration, priority (low/medium/high), and completion status.
+- **Pet & Owner modeling**: an Owner can manage multiple Pets, each with their own task list and preferences.
+- **Smart daily planning**: `Planner.build_plan()` selects tasks that fit within a given time budget, prioritizing high-priority tasks first.
+- **Explainable scheduling**: `Planner.explain_plan()` generates a plain-English explanation of why each task was included in the plan.
+- **Interactive UI**: a Streamlit app lets you add pets, add tasks, and generate/view the explained daily plan in the browser.
+- **Automated tests**: 5 pytest tests cover task completion, task counting, priority-based ordering, time-budget filtering, and empty-plan messaging.## 🖥️ Sample Output
 
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
