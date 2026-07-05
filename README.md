@@ -92,11 +92,11 @@ Sample test output:
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Enter an owner name, pet name, and species in the sidebar form.
+2. Add a few care tasks (title, duration in minutes, and priority: low/medium/high) using the "Add task" button — they'll appear in the "Current tasks" table.
+3. Scroll to "Build Schedule" and set how much time is available today.
+4. Click "Generate schedule" to see the selected tasks, sorted by priority, that fit within your time budget.
+5. Read the "Why this plan" explanation to see the reasoning behind each included task.
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
 ## Sample Output
