@@ -92,3 +92,16 @@ Describe your app in numbered steps so a reader can follow along without watchin
 5. <!-- Add more steps as needed -->
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+## Sample Output
+
+\`\`\`
+Today's Plan:
+  - Morning walk (20 min, high)
+  - Breakfast (10 min, high)
+  - Playtime (30 min, low)
+
+Why this plan:
+- 'Morning walk' was included because it's high priority and takes 20 min.
+- 'Breakfast' was included because it's high priority and takes 10 min.
+- 'Playtime' was included because it's low priority and takes 30 min.
+\`\`\`
